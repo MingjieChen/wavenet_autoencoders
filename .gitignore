@@ -32,3 +32,4 @@ split_scp.py
 autoencoders/cbhg.py
 autoencoders/autoencoder.py
 autoencoders/spad_ae_model.py
+autoencoders/module.py
