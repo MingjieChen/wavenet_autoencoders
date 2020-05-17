@@ -10,10 +10,10 @@ This work consits of two models:
 ![Model](AE.png)
 
 # Requirements
- 1 Python 3.6
- 2 PyTorch 0.4.1
- 3 tensorboardX
- 4 challenge evaluation scripts [rep](https://github.com/bootphon/zerospeech2020)
+ 1. Python 3.6
+ 2. PyTorch 0.4.1
+ 3. tensorboardX
+ 4. challenge evaluation scripts [rep](https://github.com/bootphon/zerospeech2020)
 
 # Steps to run
 
