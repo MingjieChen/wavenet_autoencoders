@@ -29,3 +29,6 @@ wavenet_spad_ae_train.py
 feat_combine.py
 ae_train.py
 split_scp.py
+autoencoders/cbhg.py
+autoencoders/autoencoder.py
+autoencoders/spad_ae_model.py
