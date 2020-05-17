@@ -21,3 +21,11 @@ core*
 baseline/
 ae_exp/
 ae_tensorboard/
+mksub_2017.log
+preprocess_2017.py
+mksubset_2017.py
+new_ae_train.py
+wavenet_spad_ae_train.py
+feat_combine.py
+ae_train.py
+split_scp.py
