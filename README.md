@@ -14,6 +14,8 @@ This work consits of two models:
  2. PyTorch 0.4.1
  3. tensorboardX
  4. challenge evaluation scripts [rep](https://github.com/bootphon/zerospeech2020)
+ 5. librosa
+ 6. scipy
 
 # Steps to run
 
@@ -21,3 +23,6 @@ This work consits of two models:
 `bash ./run_bash/download_dataset.sh`
 
 Unzip the dataset requires 7z (>16.04) and password
+
+## Preprocessing
+`bash ./run_bash/run_pre.sh 2020/2019`

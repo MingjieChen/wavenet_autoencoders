@@ -5,7 +5,7 @@ PYTHON=/share/mini1/sw/std/python/anaconda3-2019.07/v3.7/envs/torch_0.4/bin/pyth
 #$PYTHON train.py --dump-root  dump/lj/logmelspectrogram/norm/ --preset hp.json --checkpoint-dir exp/0108LJ/ \
 #                --log-event-path tensorboard/0108LJ/
 
-data_root=2020/2019/
+data_root=$1
 dump_dir=dump/2019/
 scp_dir=scp/2019/
 
