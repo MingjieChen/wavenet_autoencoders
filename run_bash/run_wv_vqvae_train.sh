@@ -7,12 +7,13 @@ PYTHON=/share/mini1/sw/std/python/anaconda3-2019.07/v3.7/envs/torch_0.4/bin/pyth
 
 
 
-exp=0513vqvae_1
+exp=$1
 #step=checkpoint_step000200000.pth
 step=checkpoint_latest.pth
-hp=wv_vqvae_hp.json
-load_hp=exp/$exp/hparams.json
-lan=english
+#hp=wv_vqvae_hp.json
+hp=$2
+#load_hp=exp/$exp/hparams.json
+lan=$3
 
 $PYTHON wavenet_vqvae_train.py --dump-root  dump/2019/$lan/ --preset $hp --checkpoint-dir exp/$exp/ \
                 --log-event-path tensorboard/$exp/ --feat=mfcc --use-norm  #--checkpoint=exp/$exp/$step

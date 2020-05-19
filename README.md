@@ -26,3 +26,17 @@ Unzip the dataset requires 7z (>16.04) and password
 
 ## Preprocessing
 `bash ./run_bash/run_pre.sh 2020/2019`
+
+## Train
+ * train SVQ-WAE model
+    
+    `bash ./run_bash/run_wv_vqvae_train.sh exp_name hps language`
+    
+    e.g. `bash ./run_bash/run_wv_vqvae_train.sh exp_name hps/wv_vqvae_hp.json english`
+ 
+ * train IN-WAE model
+ 
+  `bash ./run_bash/run_inae_train.sh exp_name hps language`
+ 
+  e.g. `bash ./run_bash/run_inae_train.sh exp_name hps/inae_hp.json english`
+
