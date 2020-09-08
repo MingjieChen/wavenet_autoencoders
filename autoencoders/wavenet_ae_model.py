@@ -230,7 +230,7 @@ class AdaIN(nn.Module):
     def forward(self, x, cond):
         cond = self.lin(cond)
         mean, std = cond[:, :self.hid], cond[:, self.hid:]
-        out = x * std.unsqueeze(dim = 2) + mean.unsqueeze(dim = 2)
+        out = self.norm_layer(x) * std.unsqueeze(dim = 2) + mean.unsqueeze(dim = 2)
         return out
 
 class INAE(nn.Module):
