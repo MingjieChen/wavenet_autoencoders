@@ -44,7 +44,7 @@
   "gin_channels": 32,
   "n_speakers": 153,
   "pin_memory": true,
-  "num_workers": 10,
+  "num_workers": 4,
   "batch_size": 40,
   "dev_batch_size":10,
   "optimizer": "Adam",
@@ -72,4 +72,5 @@
   "language":"english",
   "K":256,
   "ema":false,
+  "encoder_hid":256
 }

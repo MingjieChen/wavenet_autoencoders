@@ -63,7 +63,8 @@ from wavenet_vocoder.mixture import sample_from_mix_gaussian
 import audio
 from hparams import hparams, hparams_debug_string
 
-from autoencoders.wavenet_ae_model import VQVAE
+from vqvae_model import VQVAE
+#from autoencoders.wavenet_ae_model import VQVAE
 
 global_step = 0
 global_test_step = 0
@@ -942,14 +943,7 @@ def build_model():
         use_speaker_embedding=True,
     )
 
-    if hparams.use_K1 and hparams.K1 != hparams.K:
-        K1 = hparams.K1
-    else:
-        K1 = None
-    model = VQVAE(wavenet=wavenet,c_in=39,hid=hparams.cin_channels, frame_rate = hparams.frame_rate, 
-                use_time_jitter = hparams.time_jitter, K = hparams.K, ema = hparams.ema, 
-                sliced = hparams.sliced, ins_norm = hparams.ins_norm, post_conv = hparams.post_conv, adain = hparams.adain,
-                dropout = hparams.vq_drop, drop_dim = hparams.drop_dim, K1 = K1, num_slices = hparams.num_slices )
+    model = VQVAE(wavenet=wavenet,c_in=hparams.dim_in,hid=hparams.cin_channels, encoder_hid=hparams.encoder_hid) 
     return model
 
 

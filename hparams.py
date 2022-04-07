@@ -125,23 +125,13 @@ hparams = HParams(
     test_eval_epoch_interval=50,
     save_optimizer_state=True,
 
-    # CatVAE:
-    beta=0.1,
-    language='all',
-    frame_rate=50,
-    time_jitter=False,
+    # autoencoder input feature dim
+    dim_in=39,
+    encoder_hid=384,
+    language='english',
     K=256,
-    ema=False,
-    sliced=False,
-    post_conv=True,
-    ins_norm=False,
-    adain=False,
-    hard=False,
-    vq_drop=False,
-    drop_dim='t',
-    K1=32,
-    use_K1=False,
-    num_slices=2
+    ema=False
+
 )
 
 
