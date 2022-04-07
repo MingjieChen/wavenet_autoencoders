@@ -22,23 +22,18 @@ This work consits of two models:
 # Steps to run
 
 ## Download data
-`bash ./run_bash/download_dataset.sh`
+`bash ./bin/download_dataset.sh`
 
 Unzip the dataset requires 7z (>16.04) and password
 
 ## Preprocessing
-`bash ./run_bash/run_pre.sh 2020/2019`
+`bash ./bin/run_pre.sh 2020/2019`
 
 ## Train
- * train SVQ-WAE model
+ * train VQ-WAE model
     
-    `bash ./run_bash/run_wv_vqvae_train.sh exp_name hps language`
+    `bash ./bin/vqwae_train.sh exp_name hps language`
     
-    e.g. `bash ./run_bash/run_wv_vqvae_train.sh exp_name hps/wv_vqvae_hp.json english`
+    e.g. `./bin/vqwae_train.sh exp_name hps/vqwae.json english`
  
- * train IN-WAE model
- 
-   `bash ./run_bash/run_inae_train.sh exp_name hps language`
- 
-   e.g. `bash ./run_bash/run_inae_train.sh exp_name hps/inae_hp.json english`
 
