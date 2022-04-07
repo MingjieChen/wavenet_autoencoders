@@ -5,13 +5,13 @@
 
 [[paper](http://arxiv.org/abs/2008.06892)]
 
-This work is based on:
+### This work is based on:
  1. [Chorowski' wavenet autoencoder model](https://arxiv.org/abs/1901.08810) 
  2. [wavenet vocoder implementation](https://github.com/r9y9/wavenet_vocoder)
 
-This work consits of two models: 
- * WaveNet autoencoder + Instance Normalization (IN-WAE)
- * WaveNet autoencoder + Sliced Vector Quantization (SVQ-WAE)
+### This work consits of two models: 
+ 1. WaveNet autoencoder + Instance Normalization (IN-WAE)
+ 2. WaveNet autoencoder + Sliced Vector Quantization (SVQ-WAE)
  
 ![Model](AE.png)
 
@@ -32,16 +32,23 @@ This work consits of two models:
 
 Unzip the dataset requires 7z (>16.04) and password
 
-## create conda env
+## create conda env and install pkgs
+```bash
+conda create --name torch_0.4 python==3.6
+source activate torch_0.4
+conda install -c conda-forge librosa
+conda install pytorch=0.4.1 cuda90 -c pytorch
+pip install tensorboardX wavenet_vocoder
+```
 
 
 ## Preprocessing
 ```bash
-./bin/run_pre.sh data_root`
+./bin/run_pre.sh data_root
 ```
 e.g.
 ```bash
-./bin/run_pre.sh data_root`
+./bin/run_pre.sh 2020/2019
 ```
 
 ## Train
@@ -51,4 +58,6 @@ e.g.
     
     e.g. ```bash ./bin/vqwae_train.sh exp_name hps/vqwae.json english```
  
-
+## Inference for ABX evaluation
+ * inference VQ-WAE model
+ 	
