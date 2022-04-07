@@ -38,3 +38,11 @@ autoencoders/
 submit*.sh
 new_scp/
 new_dump/
+bin/run_ae_train.sh
+bin/run_comb.sh
+bin/run_eval.sh
+bin/run_infer.sh
+bin/run_spad_train.sh
+bin/run_train.sh
+bin/run_wv_catae_train.sh
+bin/run_wvae_train.sh
