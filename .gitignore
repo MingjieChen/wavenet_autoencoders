@@ -35,3 +35,6 @@ autoencoders/spad_ae_model.py
 autoencoders/module.py
 2020
 autoencoders/
+submit*.sh
+new_scp/
+new_dump/

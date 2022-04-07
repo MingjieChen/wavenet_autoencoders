@@ -25,7 +25,7 @@ from os.path import join
 import json
 from wavenet_vocoder.util import is_mulaw_quantize, is_mulaw, is_raw
 from docopt import docopt
-
+from tqdm import tqdm
 def preprocess( in_dir, out_root,sp2ind_dir):
         #os.makedirs(out_dir, exist_ok=True)
     metadata = build_from_path(in_dir, out_dir,sp2ind_dir )
@@ -42,17 +42,17 @@ def write_metadata(metadata, out_dir):
     print('Max frame length: %d' % max(m[1] for m in metadata))
 def build_from_path(in_dir,out_dir,sp2ind_dir):
     metadata = []
-    src_f = open(in_dir,'rb')
+    src_f = open(in_dir)
     src_files = json.load(src_f)
-    for wav_path, dst_path in src_files:
-        _data = _process_utterance(dst_path,wav_path,sp2ind_dir,'dummy')
+    sp_f = open(sp2ind_dir,'r')
+    sp2ind = json.load(sp_f)
+    for wav_path, dst_path in tqdm(src_files):
+        _data = _process_utterance(dst_path,wav_path,sp2ind,'dummy')
         metadata.append(_data)
     return metadata
 
 
-def _process_utterance(out_dir,wav_path,sp2ind_dir,text):
-    sp_f = open(sp2ind_dir,'r')
-    sp2ind = json.load(sp_f)
+def _process_utterance(out_dir,wav_path,sp2ind,text):
     
     sp = wav_path.split('/')[-1].split('.')[0].split('_')[0]
     if sp in sp2ind:
