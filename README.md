@@ -9,7 +9,7 @@
  1. [Chorowski' wavenet autoencoder model](https://arxiv.org/abs/1901.08810) 
  2. [wavenet vocoder implementation](https://github.com/r9y9/wavenet_vocoder)
 
-### This work consits of two models: 
+### This work proposes two models: 
  1. WaveNet autoencoder + Instance Normalization (IN-WAE)
  2. WaveNet autoencoder + Sliced Vector Quantization (SVQ-WAE)
  
